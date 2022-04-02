@@ -153,50 +153,30 @@ if(isset($_POST['sendMessage'])){
           
 }
 
-// function test_input($data) {
-//   $data = trim($data);
-//   $data = stripslashes($data);
-//   $data = htmlspecialchars($data);
-//   return $data;
-// }
 
-if(isset($_POST['walletupdate'])){
+
+
+
+
+
+
+
+
+
 
  
 
   
-  $id = test_input($_POST["user"]);
-  $walletName = test_input($_POST["walletName"]);
-  $walletAddress = test_input($_POST["walletAddress"]);
-  $retype = test_input($_POST["retype_wallet"]);
-  $coin = test_input($_POST["coin"]);
-  $Cryptontwk = test_input($_POST["cryptontwk"]);
-
-echo "$walletName";
-echo "$walletAddress";
-echo "$retype";
-echo "$coin";
-echo "$cryptontwk";
-echo "$id";
+  
 
 
 
 
-  // if($walletAddress == $retype ){
-  //   $sql = " INSERT INTO `userAccount` (`id`, `walletName`, `walletAddress`, `cryptoCurrency`, `cryptoNet`) 
-  //  VALUES ('$id', '$walletName', '$walletAddress', '$coin', '$Cryptontwk')";
 
-  //   header("Location:http://localhost/GTPA/profiles/user_profile/pages/reports/Deposit.php");
-
-    
-  // }else{
-  //   header("Location:http://localhost/GTPA/profiles/user_profile/pages/reports/inbox.php");
-
-   
-  // }
   
   
-}
+  
+
 
 
 

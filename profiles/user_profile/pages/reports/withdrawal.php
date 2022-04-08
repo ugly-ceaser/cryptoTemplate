@@ -1,4 +1,4 @@
-<?php require("../../../../publicScript/conn.php");?>
+
 
 
 <!DOCTYPE html>
@@ -65,7 +65,7 @@
 					  <div class="media align-items-center p-0">
 						<div class="text-center">
 							
-							<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+							<form action="../../../../publicScript/conn.php" method="post">	
 								 
 								
 								<!-- userId -->

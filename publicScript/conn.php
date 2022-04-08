@@ -1,4 +1,9 @@
 <?php
+
+
+
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -16,70 +21,96 @@ $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 
 
-if(isset($_POST['deposit'])){
-
-  function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-  }
-  
-  $id = test_input($_POST["user"]);
-  $trxId = test_input($_POST["trxid"]);
-  $amount = test_input($_POST["amount"]);
-  $trxType = "deposit";
-  $status = "pending";
-  $walletName = "admin";
-  $coin = test_input($_POST["coin"]);
-  $Cryptontwk = test_input($_POST["network"]);
-  $date = date("Y/m/d");
 
 
- if(is_int($amount)){
-  $sql = "INSERT INTO `GeneralAccount` (`id`, `trxId`, `amount`, `trxType`, `trxStatus`, `walletName`, `coin`,`coinNetwork`, `datee`) 
-  VALUES ('$id', '$trxId', '$amount', '$trxType', '$status', '$walletName', '$coin','$Cryptontwk', '$date');";
-
-  $conn->exec($sql);
-
-  header("Location:http://localhost/GTPA/profiles/user_profile/pages/reports/Deposit.php");
-
- }
- else{
-  header("Location:http://localhost/GTPA/profiles/user_profile/pages/reports/Deposit.php");
-
- }
-
-  
-  
-  
-  
-
-  
-  
-  
 
 
+
+
+if(isset($_POST['user_profile'])){
+
+      function test_input($data) {
+
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+
+    };
+
+      $userid = test_input($_POST["user"]);
+      $firstname = test_input($_POST['fname']);
+      $lastname = test_input($_POST["lname"]);
+      $email = test_input($_POST["email"]);
+      $phoneNumber = test_input($_POST["phone"]);
+
+      echo $userid;
+        
+    try{
+
+          $sql = "UPDATE `verifiedUser` SET `fname`='$firstname',`lname`='$lastname',`email`='$email',`phoneNumber`='$phoneNumber' WHERE id = '$userid'";
+
+
+          $stmt = $conn->prepare($sql);
+
+          // execute the query
+          $stmt->execute();
+
+        // echo a message to say the UPDATE succeeded
+      echo $stmt->rowCount() . header('Location:http://localhost/GTPA/profiles/user_profile/pages/reports/member-profile.php');
+    } catch(PDOException $e) {
+      echo $sql . "<br>" . $e->getMessage();
+    }
+
+    $conn = null;
+        
+      
 
  
+};
 
-          
-}
+  if(isset($_POST['deposit'])){
 
+      function test_input($data) {
 
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
 
+      }
 
+   
+      $id = test_input($_POST["user"]);
+      $trxId = test_input($_POST["trxid"]);
+      $amount = test_input($_POST["amount"]);
+      $trxType = "deposit";
+      $status = "pending";
+      $walletName = "admin";
+      $coin = test_input($_POST["coin"]);
+      $Cryptontwk = test_input($_POST["network"]);
+      $date = date("Y/m/d");
+
+      $sql = "INSERT INTO `GeneralAccount` (`id`, `trxId`, `amount`, `trxType`, `trxStatus`, `walletName`, `coin`,`coinNetwork`, `datee`) 
+      VALUES ('$id', '$trxId', '$amount', '$trxType', '$status', '$walletName', '$coin','$Cryptontwk', '$date');";
+
+      $conn->exec($sql);
+
+      header("Location:http://localhost/GTPA/profiles/user_profile/pages/reports/Deposit.php? message = successful");
+      
+} ;
 
 if(isset($_POST['withdraw'])){
 
-  function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-  }
-  
-  
+        function test_input($data) {
+
+          $data = trim($data);
+          $data = stripslashes($data);
+          $data = htmlspecialchars($data);
+          return $data;
+
+      }
+
   $id = test_input($_POST["user"]);
   $trxId = "1";
   $amount = test_input($_POST["amount"]);
@@ -88,51 +119,32 @@ if(isset($_POST['withdraw'])){
   $walletName =test_input($_POST["walletName"]);
   $coin = test_input($_POST["coin"]);
   $Cryptontwk = test_input($_POST["cryptontwk"]);
-
-
   $date = date("Y/m/d");
 
 
-  if(is_int($amount)){
-    $sql = "INSERT INTO `GeneralAccount` (`id`, `trxId`, `amount`, `trxType`, `trxStatus`, `walletName`, `coin`,`coinNetwork`, `datee`) 
-    VALUES ('$id', '$trxId', '$amount', '$trxType', '$status', '$walletName', '$coin','$Cryptontwk', '$date');";
 
-$conn->exec($sql);
+  $sql = "INSERT INTO `GeneralAccount` (`id`, `trxId`, `amount`, `trxType`, `trxStatus`, `walletName`, `coin`,`coinNetwork`, `datee`) 
+  VALUES ('$id', '$trxId', '$amount', '$trxType', '$status', '$walletName', '$coin','$Cryptontwk', '$date');";
 
-header("Location:http://localhost/GTPA/profiles/user_profile/pages/reports/withdrawal.php");
-    
+  $conn->exec($sql);
 
+  header("Location:http://localhost/GTPA/profiles/user_profile/pages/reports/withdrawal.php");
 
-  }else{
-    header("Location:http://localhost/GTPA/profiles/user_profile/pages/reports/withdrawal.php");
-
-  }
-  
- 
-
-
-          
-}
-
-
-
-
-
-
-
-
-
-
+};
 
 if(isset($_POST['sendMessage'])){
 
-  function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-  }
 
+            function test_input($data) {
+
+              $data = trim($data);
+              $data = stripslashes($data);
+              $data = htmlspecialchars($data);
+              return $data;
+
+          }
+
+  
   $senderId = test_input($_POST["senderid"]);
   $recieverId = test_input($_POST["admin"]);
   $subject = test_input($_POST["subject"]);
@@ -143,19 +155,20 @@ if(isset($_POST['sendMessage'])){
 
 
 
-  $sql = "INSERT INTO `messages` ( `senderId`, `recieverId`, `msgSubject`, `message`, `messageStatus`, `datee`) 
+   $sql = "INSERT INTO `messages` ( `senderId`, `recieverId`, `msgSubject`, `message`, `messageStatus`, `datee`) 
           VALUES ( '$senderId', '$recieverId', '$subject', '$message', '$mesgStat', '$date')";
 
-          $conn->exec($sql);
+    $conn->exec($sql);
 
-          header("Location:http://localhost/GTPA/profiles/user_profile/pages/reports/sent.php");
+    header("Location:http://localhost/GTPA/profiles/user_profile/pages/reports/sent.php");
 
           
+};
+
+
+if(isset($_POST['walletupdate'])){
+  echo"jackson";
 }
-
-
-
-
 
 
 
@@ -166,16 +179,27 @@ if(isset($_POST['sendMessage'])){
 
  
 
-  
-  
+
+            
+
+ 
 
 
 
 
 
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -217,34 +241,24 @@ function getUserAccount($conn, $userId) {
 
 function getUserDeposit($conn, $userId) {
 
-  $trxType = "deposit";
-  $trxStatus = "approved";
+            $trxType = "deposit";
+            $trxStatus = "approved";
+
+            $query = "SELECT SUM(amount) AS amt FROM generalAccount WHERE id = :userId AND trxType = :trxType AND trxStatus = :trxStatus";
+            $result = $conn->prepare($query);
+            $result->execute([ "userId" => $userId, "trxType" => $trxType,"trxStatus" => $trxStatus]);
+             
+            return $result->fetch();
 
 
-
-  $query = "SELECT SUM(amount) AS amt FROM generalAccount WHERE id = :userId AND trxType = :trxType AND trxStatus = :trxStatus";
-  $result = $conn->prepare($query);
-  $result->execute([
-    
-    "userId" => $userId,
-    "trxType" => $trxType,
-    "trxStatus" => $trxStatus
-
-
-
-]);
-
-  return $result->fetch();
 }
+                
+            
 
-// function getUsersDetails($conn, $userId) {
-//   $messages = getUserMessage($conn, $userId);
-//   $account = getUserAccount($conn, $userId);
 
-//   return  [
-//     "message" => $messages,
-//     "account" => $account,
-//   ]
-// }
+
+       
+
+
 
 ?>

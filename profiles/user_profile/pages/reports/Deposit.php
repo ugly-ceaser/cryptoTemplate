@@ -1,4 +1,4 @@
-<?php require("../../../../publicScript/conn.php");?>
+
 
 
 <!DOCTYPE html>
@@ -66,7 +66,7 @@
 						  <div class="row">
 							  <div class="col-sm-12 col-md-5">	  
 								  <div class="text-center">
-								  <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+								  <form action="../../../../publicScript/conn.php" method="post">
 										  <div class="input-group mb-15">
 												  
 											  <span class="input-group-text bg-transparent"><i class="ti-user"></i></span>

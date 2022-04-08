@@ -1,4 +1,4 @@
-<?php require("../../../../publicScript/conn.php");?>
+
 
 
 <!DOCTYPE html>
@@ -85,41 +85,41 @@
 			  <div class="row">
 				<div class="col-12">
 
-        <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+        <form action="../../../../publicScript/conn.php" method="post">
               <div class="form-group">
-												<input class="form-control" name="user" value="<?php echo $_id =  $id ? $id : "Not Verified"; ?>" hidden placeholder="To:">
-											</div>
+				<input class="form-control" name="user" value="<?php echo $_id =  $id ? $id : "Not Verified"; ?>" hidden placeholder="To:">
+					</div>
 					<div class="form-group row">
 					  <label class="col-sm-2 col-form-label">First Name</label>
 					  <div class="col-sm-10">
-						<input class="form-control" name="fname" placeholder="First Name" type="text">
+						<input class="form-control" name="fname" placeholder="First Name" type="text" required>
 					  </div>
 					</div>
 					<div class="form-group row">
 					  <label class="col-sm-2 col-form-label">Last Name</label>
 					  <div class="col-sm-10">
-						<input class="form-control" type="text" name="lname" placeholder="Last Name">
+						<input class="form-control" type="text" name="lname" placeholder="Last Name" required>
 					  </div>
 					</div>
 					<div class="form-group row">
 					  <label class="col-sm-2 col-form-label">Email Adress</label>
 					  <div class="col-sm-10">
-						<input class="form-control" type="email" name="email" placeholder="Email Address">
+						<input class="form-control" type="email" name="email" placeholder="Email Address" required>
 					  </div>
 					</div>
 					<div class="form-group row">
 					  <label class="col-sm-2 col-form-label">Phone Number</label>
 					  <div class="col-sm-10">
-						<input class="form-control" type="tel" name="phone"  placeholder="Enter your phone number">
+						<input class="form-control" type="tel" name="phone"  placeholder="Enter your phone number" required>
 					  </div>
 					</div>
 
-					<div class="form-group row">
+					<!-- <div class="form-group row">
 								<label class="col-sm-2 col-form-label">Profile Picture</label>
 								<div class="col-sm-10">
 									<input class="form-control" name="file "type="file" placeholder="Profile Picture">
 								</div>
-							</div>
+							</div> -->
 
 
 					<div class="form-group row">
@@ -147,9 +147,9 @@
 			  <div class="row">
 				<div class="col-12">
 
-				<form action="../../../../userInsertion.php" method="post">
+				<form action="../../../../publicScript/conn.php" method="post">
 
-           <div class="form-group">
+           				<div class="form-group">
 							<input class="form-control" name="user" value="<?php echo $_id =  $id ? $id : "Not Verified"; ?>" hidden placeholder="To:">
 						</div>
 					<div class="form-group row">

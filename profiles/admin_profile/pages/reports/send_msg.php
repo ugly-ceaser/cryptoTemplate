@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +11,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../images/favicon.ico">
 
-    <title>Crypto Admin - Members Profile</title>
+    <title>GTPA - Members Profile</title>
   
 	<!-- Bootstrap 4.0-->
 	<link rel="stylesheet" href="../../../assets/vendor_components/bootstrap/dist/css/bootstrap.min.css">
@@ -68,34 +71,38 @@
 			  <div class="box-header no-border">
 				<h3 class="box-title">Compose New Message</h3>
 			  </div>
+				<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+						<div class="box-body bg-dark">
+							<div class="form-group">
+								<input class="form-control" name="admin" value="admin"  hidden>
+							</div>
 
-			  <div class="box-body bg-dark">
-				  <div class="form-group">
-					<input class="form-control" placeholder="To:">
-				  </div>
-				  <div class="form-group">
-					<input class="form-control" placeholder="Subject:">
-				  </div>
-				  <div class="form-group">
-						<textarea id="compose-textarea" class="form-control h-300" name="message" placeholder="type your message">
-						  
-						</textarea>
-				  </div>
-				  <div class="form-group">
-					<div class="btn btn-info btn-file">
-					  <i class="fa fa-paperclip"></i> Attachment
-					  <input type="file" name="attachment">
-					</div>
-					<p class="help-block">Max. 32MB</p>
-				  </div>
-			  </div>			  
-				<div class="box-footer bg-dark">
-				  <div class="pull-right">
-					
-					<button type="submit" class="btn btn-success"><i class="fa fa-envelope-o"></i> Send</button>
-				  </div>
-				  				  
-				</div>
+							<div class="box-body bg-dark">
+							<div class="form-group">
+								<input class="form-control" name="messageStatus" value="sent"  hidden>
+							</div>
+
+							<div class="form-group">
+								<input class="form-control" name="senderid" value="<?php echo $_id =  $id ? $id : "Not Verified"; ?>" hidden placeholder="To:">
+							</div>
+							<div class="form-group">
+								<input class="form-control" name="subject"  placeholder="Subject:">
+							</div>
+							<div class="form-group">
+									<textarea id="compose-textarea" class="form-control h-300" name="message" placeholder="type your message">
+									
+									</textarea>
+							</div>
+							
+						</div>			  
+							<div class="box-footer bg-dark">
+							<div class="pull-right">
+								
+								<button type="submit" class="btn btn-success" name="sendMessage"><i class="fa fa-envelope-o"></i> Send</button>
+							</div>
+											
+							</div>
+				</form>
 			</div> 
 			
           <!-- /. box -->

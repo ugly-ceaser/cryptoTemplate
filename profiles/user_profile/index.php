@@ -43,12 +43,6 @@
 
 
 	<?php include 'header.php';
-
-	include("../../publicScript/conn.php");
-
-	
-
-	
 	?>	
 
 <!-- Content Wrapper. Contains page content -->

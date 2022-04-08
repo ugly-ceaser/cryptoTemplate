@@ -79,12 +79,14 @@
               <h2 class="no-margin">Users</h2>
             </div>
             </div>
-            <div class="flexbox align-items-center mt-25">
+            <div class="flexbox align-items-center mt-2">
             <div>
-              <p class="no-margin">2.340000434 <span class="text-gray">BTC</span> <span class="text-info">$0.04</span></p>
+              <p class="no-margin"> <span class="text-gray"></span> <span class="text-info"></span></p>
             </div>
             <div class="text-right">
-              <p class="no-margin"><span class="text-success">+5.35%</span></p>
+              <p class="no-margin"><span class="text-success h2">
+			  <?=  count(getUsers($conn)); ?>
+			  </span></p>
             </div>
             </div>
           </div>
@@ -99,12 +101,14 @@
             <h2 class="no-margin">Deposits</h2>
           </div>
           </div>
-          <div class="flexbox align-items-center mt-25">
+          <div class="flexbox align-items-center mt-2">
           <div>
-            <p class="no-margin">1.34000434 <span class="text-gray">LTC</span> <span class="text-info">$0.14</span></p>
+            <p class="no-margin"><span class="text-gray"></span> <span class="text-info"></span></p>
           </div>
           <div class="text-right">
-            <p class="no-margin"><span class="text-danger">-2.35%</span></p>
+            <p class="no-margin"><span class="text-danger h2">
+				<?= "$" . number_format(getAmount($conn, "deposit")); ?>
+			</span></p>
           </div>
           </div>
         </div>		
@@ -119,12 +123,14 @@
             <h2 class="no-margin">Withdrawal</h2>
           </div>
           </div>
-          <div class="flexbox align-items-center mt-25">
+          <div class="flexbox align-items-center mt-2">
           <div>
-            <p class="no-margin">0.30000434 <span class="text-gray">NEO</span> <span class="text-info">$5.04</span></p>
+            <p class="no-margin"> <span class="text-gray"></span> <span class="text-info"></span></p>
           </div>
           <div class="text-right">
-            <p class="no-margin"><span class="text-success">+4.35%</span></p>
+            <p class="no-margin"><span class="text-success h2">
+				<?= "$" . number_format(getAmount($conn, "withdraw")); ?>
+			</span></p>
           </div>
           </div>
         </div>
@@ -140,12 +146,14 @@
             <h2 class="no-margin"> Pending</h2>
           </div>
           </div>
-          <div class="flexbox align-items-center mt-20">
+          <div class="flexbox align-items-center mt-2">
           <div>
-            <p class="no-margin">0.34000434 <span class="text-gray">DASH</span> <span class="text-info">$0.54</span></p>
+            <p class="no-margin"> <span class="text-gray"></span> <span class="text-info"></span></p>
           </div>
           <div class="text-right">
-            <p class="no-margin"><span class="text-danger">-5.35%</span></p>
+            <p class="no-margin"><span class="text-danger h2">
+				<?= "$" . number_format(getAmountPending($conn)); ?>
+			</span></p>
           </div>
           </div>
         </div>
@@ -179,154 +187,68 @@
 						<table class="table table-bordered no-margin">
 						  <thead>					
 							<tr class="bg-pale-dark">
-							  <th>Username</th>
+							  <th>Name</th>
 							  <th>Emails</th>
-							  <th>Password</th>
-							  <th> Last Login</th>
-							  <th>Last Withdrawal</th>
+							  <th>Last Login</th>
+							  <th> Date Registered</th>
+							  <th>Withdrawal</th>
 							</tr>
 						  </thead>
 						  <tbody>
-							<tr>
-							  <td>
-								<a href="#" class="text-yellow hover-warning">
-								  9d2c7b06bfa0
-								</a>
-								...
-							  </td>
-							  <td>1.2126281 BTC</td>
-							  <td>
-								<time class="timeago" datetime="2018-02-01T13:38:01Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
-							  </td>
-							  <td>medium</td>
-							  <td><span class="label label-success">Confirmed</span></td>
-							</tr>
-							<tr>
-							  <td>
-								<a href="#" class="text-yellow hover-warning">
-								  5de67415bfc6
-								</a>
-								...
-							  </td>
-							  <td>0.20522881 BTC</td>
-							  <td>
-								<time class="timeago" datetime="2018-02-01T13:38:01Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
-							  </td>
-							  <td>high</td>
-							  <td><span class="label label-warning">Unconfirmed</span></td>
-							</tr>
-							<tr>
-							  <td>
-								<a href="#" class="text-yellow hover-warning">
-								  733de15b3cec
-								</a>
-								...
-							  </td>
-							  <td>2.02622033 BTC</td>
-							  <td>
-								<time class="timeago" datetime="2018-02-01T13:38:01Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
-							  </td>
-							  <td>high</td>
-							  <td><span class="label label-success">Confirmed</span></td>
-							</tr>
-							<tr>
-							  <td>
-								<a href="#" class="text-yellow hover-warning">
-								  6793bcfa4f7f
-								</a>
-								...
-							  </td>
-							  <td>2.43220578 BTC</td>
-							  <td>
-								<time class="timeago" datetime="2018-02-01T13:38:00Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
-							  </td>
-							  <td>high</td>
-							  <td><span class="label label-danger">Canceled</span></td>
-							</tr>
-							<tr>
-							  <td>
-								<a href="#" class="text-yellow hover-warning">
-								  2c66087936b5
-								</a>
-								...
-							  </td>
-							  <td>14.01099978 BTC</td>
-							  <td>
-								<time class="timeago" datetime="2018-02-01T13:38:00Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
-							  </td>
-							  <td>high</td>
-							  <td><span class="label label-danger">Canceled</span></td>
-							</tr>
-							<tr>
-							  <td>
-								<a href="#" class="text-yellow hover-warning">
-								  51935e53c294
-								</a>
-								...
-							  </td>
-							  <td>0.3024534 BTC</td>
-							  <td>
-								<time class="timeago" datetime="2018-02-01T13:38:00Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
-							  </td>
-							  <td>high</td>
-							  <td><span class="label label-warning">Unconfirmed</span></td>
-							</tr>
-							<tr>
-							  <td>
-								<a href="#" class="text-yellow hover-warning">
-								  a3976b73cf5e
-								</a>
-								...
-							  </td>
-							  <td>0.20518486 BTC</td>
-							  <td>
-								<time class="timeago" datetime="2018-02-01T13:37:59Z" title="2018-02-01 13:37 GMT">2 minutes ago</time>
-							  </td>
-							  <td>medium</td>
-							  <td><span class="label label-success">Confirmed</span></td>
-							</tr>
-							<tr>
-							  <td>
-								<a href="#" class="text-yellow hover-warning">
-								  g011cb48c078
-								</a>
-								...
-							  </td>
-							  <td>2.08039395 BTC</td>
-							  <td>
-								<time class="timeago" datetime="2018-02-01T13:37:59Z" title="2018-02-01 13:37 GMT">2 minutes ago</time>
-							  </td>
-							  <td>high</td>
-							  <td><span class="label label-success">Confirmed</span></td>
-							</tr>
-							<tr>
-							  <td>
-								<a href="#" class="text-yellow hover-warning">
-								  c6b59368635c
-								</a>
-								...
-							  </td>
-							  <td>42.99698306 BTC</td>
-							  <td>
-								<time class="timeago" datetime="2018-02-01T13:37:58Z" title="2018-02-01 13:37 GMT">2 minutes ago</time>
-							  </td>
-							  <td>high</td>
-							  <td><span class="label label-success">Confirmed</span></td>
-							</tr>
-							<tr>
-							  <td>
-								<a href="#" class="text-yellow hover-warning">
-								  a261fc1d717d
-								</a>
-								...
-							  </td>
-							  <td>1.0281818 BTC</td>
-							  <td>
-								<time class="timeago" datetime="2018-02-01T13:37:58Z" title="2018-02-01 13:37 GMT">2 minutes ago</time>
-							  </td>
-							  <td>high</td>
-							  <td><span class="label label-danger">Canceled</span></td>
-							</tr>
+							  <?php if(count(getUsers($conn))): ?>
+								<?php foreach(getUsers($conn) as $user): ?>
+									<tr>
+										<td>
+											<a href="#" class="text-yellow text-capitalize hover-warning">
+												<?= $user["fname"] . " " . $user["lname"]; ?>
+											</a>
+										</td>
+										<td>
+											<?= $user["email"]; ?>
+										</td>
+										<td>
+											<time class="timeago" datetime="<?= strtotime($user["lastlog"]); ?>" title="<?= strtotime($user["lastlog"]); ?>">
+												<?= date("D, m Y", strtotime($user["lastlog"])) ?>
+											</time>
+										</td>
+										<td>
+											<?= date("D, m Y", strtotime($user["datee"])); ?>
+										</td>
+										<td>
+											<?php if(isset($_GET["update"])): ?>
+												<?php if($user["id"] == $_GET["update"]): ?>
+													<form method="post" action="./handler/user_handler.php" class="d-flex">
+														<input type="text" name="amount" class="py-2 text-white bg-transparent" style="flex: 1; border: 1px solid #777;">
+														<button class="btn-primary btn-sm" name="update" value="<?= $user["id"]; ?>">Update</button>
+													</form>
+												<?php else: ?>
+													<div class="d-flex align-items-center">
+														<span class="h4 mb-0" style="flex: 1"><?= "$" . number_format($user["availableBalance"]); ?></span>
+														<a href="?update=<?= $user["id"]; ?>" class="btn text-capitalize btn-primary btn-sm ml-2">
+															update balance
+														</a>
+													</div>
+												<?php endif; ?>
+											<?php else: ?>
+												<div class="d-flex align-items-center">
+													<span class="h4 mb-0" style="flex: 1"><?= "$" . number_format($user["availableBalance"]); ?></span>
+													<a href="?update=<?= $user["id"]; ?>" class="btn text-capitalize btn-primary btn-sm ml-2">
+														update balance
+													</a>
+												</div>
+											<?php endif; ?>
+										</td>
+									</tr>
+								<?php endforeach; ?>
+							<?php else: ?>
+								<tr>
+									<td colspan="5">
+										<div class="d-flex h-25 align-items-center justify-content-center">
+											No user found
+										</div>
+									</td>
+								</tr>
+							<?php endif; ?>
 						  </tbody>
 						</table>
 					</div>

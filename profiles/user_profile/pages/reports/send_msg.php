@@ -1,4 +1,4 @@
-<?php require("../../../../publicScript/conn.php");?>
+
 
 
 <!DOCTYPE html>
@@ -71,7 +71,7 @@
 			  <div class="box-header no-border">
 				<h3 class="box-title">Compose New Message</h3>
 			  </div>
-				<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+			  <form action="../../../../publicScript/conn.php" method="post">	
 						<div class="box-body bg-dark">
 							<div class="form-group">
 								<input class="form-control" name="admin" value="admin"  hidden>

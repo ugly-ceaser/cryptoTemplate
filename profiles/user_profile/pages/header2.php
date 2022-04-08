@@ -1,6 +1,9 @@
+
+
 <?php 
 
 session_start();
+include("../../../../publicScript/conn.php");
 
 // require("../../../publicScript/conn.php");
 

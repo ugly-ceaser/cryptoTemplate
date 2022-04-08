@@ -71,72 +71,58 @@
 			</div>
 			<div class="box-body">
 				<div class="table-responsive">
-					<table class="table table-bordered no-margin">
+					<table class="table table-bordered no-margin" style="min-width: 900px;">
 					  <thead>
 						<tr>
+						  <th>Name</th>
+						  <th>Date</th>
 						  <th>Transaction Id</th>
-						  <th>Time</th>
-						  <th>Transactions</th>
 						  <th>Sent</th>
-						  <th>Fees</th>
 						  <th>Actions</th>
 						</tr>
 					  </thead>
 					  <tbody>
-						<tr>
-						  <td>
-							<a href="#" class="text-yellow hover-warning">550171</a>
-						  </td>
-						  <td>59&nbsp;seconds ago</td>
-						  <td>2,122</td>
-						  <td>22,819.638 BTC</td>
-						  <td>1.496 BTC</td>
-						  <td>975,573</td>
-						</tr>
+							<?php if(count(pendingTransact($conn, "deposit"))): ?>
+								<?php foreach(pendingTransact($conn, "deposit") as $transact): ?>
+									<tr>
+										<td>
+											<a href="#" class="text-yellow hover-warning">
+												<?= getUser($conn, $transact["id"])["fname"] . " " . getUser($conn, $transact["id"])["lname"]; ?>
+											</a>
+										</td>
+										<td>
+											<?= date("D, m Y", strtotime($transact["datee"])); ?>
+										</td>
+										<td>
+											<?= $transact["trxId"]; ?>
+										</td>
+										<td>
+											<?= "$" . number_format($transact["amount"]); ?>
+										</td>
+										<td>
+											<div class="d-flex align-items-center">
+												<?php if($transact["trxStatus"] === "pending"): ?>
+													<a href="../../handler/user_handler.php?approve=<?= $transact['trxId']; ?>" class="btn btn-sm btn-primary">
+														Approve
+													</a>
+												<?php else: ?>
+													<button disabled class="btn btn-sm">Approve</button>
+												<?php endif; ?>
 
-						<tr>
-						  <td>
-							<a href="#" class="text-yellow hover-warning">550172</a>
-						  </td>
-						  <td>10&nbsp;minutes ago</td>
-						  <td>1,837</td>
-						  <td>8,410.154 BTC</td>
-						  <td>0.982 BTC</td>
-						  <td>950,027</td>
-						</tr>
-
-						<tr>
-						  <td>
-							<a href="#" class="text-yellow hover-warning">550173</a>
-						  </td>
-						  <td>13&nbsp;minutes ago</td>
-						  <td>1,280</td>
-						  <td>15,541.708 BTC</td>
-						  <td>1.855 BTC</td>
-						  <td>974,440</td>
-						</tr>
-
-						<tr>
-						  <td>
-							<a href="#" class="text-yellow hover-warning">550174</a>
-						  </td>
-						  <td>21&nbsp;minutes ago</td>
-						  <td>1,731</td>
-						  <td>18,009.855 BTC</td>
-						  <td>1.963 BTC</td>
-						  <td>975,484</td>
-						</tr>
-
-						<tr>
-						  <td>
-							<a href="#" class="text-yellow hover-warning">550175</a>
-						  </td>
-						  <td>31&nbsp;minutes ago</td>
-						  <td>1,390</td>
-						  <td>9,166.284 BTC</td>
-						  <td>1.923 BTC</td>
-						  <td>984,979</td>
-						</tr>
+												<a href="../../handler/user_handler.php?decline=<?= $transact['trxId']; ?>" class="btn btn-sm btn-danger ml-10">
+													Decline
+												</a>
+											</div>
+										</td>
+									</tr>
+								<?php endforeach; ?>
+							<?php else: ?>
+								<td colspan="6">
+									<div class="h-25 text-center d-flex text-muted justify-content-center">
+										No pending deposit transaction founds
+									</div>
+								</td>
+							<?php endif; ?>
 					  </tbody>
 					</table>
 				</div>
@@ -161,73 +147,59 @@
 			  </div>
 			</div>
 			<div class="box-body">
-				<div class="table-responsive">
-					<table class="table table-bordered table-striped no-margin">
+			<div class="table-responsive">
+					<table class="table table-bordered no-margin" style="min-width: 900px;">
 					  <thead>
 						<tr>
+						  <th>Name</th>
+						  <th>Date</th>
 						  <th>Transaction Id</th>
-						  <th>Time</th>
-						  <th>Transactions</th>
 						  <th>Sent</th>
-						  <th>Fees</th>
-						  <th>Action</th>
+						  <th>Actions</th>
 						</tr>
 					  </thead>
 					  <tbody>
-						<tr>
-						  <td>
-							<a href="#" class="text-yellow hover-warning">550171</a>
-						  </td>
-						  <td>59&nbsp;seconds ago</td>
-						  <td>2,122</td>
-						  <td>22,819.638 BTC</td>
-						  <td>1.496 BTC</td>
-						  <td>975,573</td>
-						</tr>
+							<?php if(count(pendingTransact($conn, "withdraw"))): ?>
+								<?php foreach(pendingTransact($conn, "withdraw") as $transact): ?>
+									<tr>
+										<td>
+											<a href="#" class="text-yellow hover-warning">
+												<?= getUser($conn, $transact["id"])["fname"] . " " . getUser($conn, $transact["id"])["lname"]; ?>
+											</a>
+										</td>
+										<td>
+											<?= date("D, m Y", strtotime($transact["datee"])); ?>
+										</td>
+										<td>
+											<?= $transact["trxId"]; ?>
+										</td>
+										<td>
+											<?= "$" . number_format($transact["amount"]); ?>
+										</td>
+										<td>
+											<div class="d-flex align-items-center">
+												<?php if($transact["trxStatus"] === "pending"): ?>
+													<a href="../../handler/user_handler.php?approve=<?= $transact['trxId']; ?>" class="btn btn-sm btn-primary">
+														Approve
+													</a>
+												<?php else: ?>
+													<button disabled class="btn btn-sm">Approve</button>
+												<?php endif; ?>
 
-						<tr>
-						  <td>
-							<a href="#" class="text-yellow hover-warning">550172</a>
-						  </td>
-						  <td>10&nbsp;minutes ago</td>
-						  <td>1,837</td>
-						  <td>8,410.154 BTC</td>
-						  <td>0.982 BTC</td>
-						  <td>950,027</td>
-						</tr>
-
-						<tr>
-						  <td>
-							<a href="#" class="text-yellow hover-warning">550173</a>
-						  </td>
-						  <td>13&nbsp;minutes ago</td>
-						  <td>1,280</td>
-						  <td>15,541.708 BTC</td>
-						  <td>1.855 BTC</td>
-						  <td>974,440</td>
-						</tr>
-
-						<tr>
-						  <td>
-							<a href="#" class="text-yellow hover-warning">550174</a>
-						  </td>
-						  <td>21&nbsp;minutes ago</td>
-						  <td>1,731</td>
-						  <td>18,009.855 BTC</td>
-						  <td>1.963 BTC</td>
-						  <td>975,484</td>
-						</tr>
-
-						<tr>
-						  <td>
-							<a href="#" class="text-yellow hover-warning">550175</a>
-						  </td>
-						  <td>31&nbsp;minutes ago</td>
-						  <td>1,390</td>
-						  <td>9,166.284 BTC</td>
-						  <td>1.923 BTC</td>
-						  <td>984,979</td>
-						</tr>
+												<a href="../../handler/user_handler.php?decline=<?= $transact['trxId']; ?>" class="btn btn-sm btn-danger ml-10">
+													Decline
+												</a>
+											</div>
+										</td>
+									</tr>
+								<?php endforeach; ?>
+							<?php else: ?>
+								<td colspan="6">
+									<div class="h-25 text-center d-flex text-muted justify-content-center">
+										No pending deposit transaction founds
+									</div>
+								</td>
+							<?php endif; ?>
 					  </tbody>
 					</table>
 				</div>

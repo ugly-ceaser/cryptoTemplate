@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../images/favicon.ico">
 
-    <title>Crypto Admin - Members Profile</title>
+    <title>GTPA - Members Messages</title>
   
 	<!-- Bootstrap 4.0-->
 	<link rel="stylesheet" href="../../../assets/vendor_components/bootstrap/dist/css/bootstrap.min.css">
@@ -33,6 +35,12 @@
 <?php include '../header2.php';?>	
 
   <!-- =============================================== -->
+
+  <?php  
+
+
+		// WORKING NOW
+ ?>
 
  
     <!-- Content Wrapper. Contains page content -->
@@ -62,9 +70,7 @@
 					  <span class="label label-success pull-right">12</span></a></li>
 					<li class="nav-item"><a class="nav-link active" href="sent.php"><i class="ion ion-paper-airplane"></i> Sent</a></li>
 					
-					<li class="nav-item"><a class="nav-link" href="starred.php"><i class="ion ion-star"></i>  Starred <span class="label label-warning pull-right">14</span></a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="trash.php"><i class="ion ion-trash-a"></i> Trash</a></li>
+					
 				  </ul>
 				</div>
 				<!-- /.box-body -->
@@ -129,150 +135,35 @@
 					<div class="table-responsive">
 						<table class="table table-hover b-2">
 						  <tbody>
-						  <tr>
-							<td><input type="checkbox"></td>
-							<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-							<td class="mailbox-name">Andrew</td>
-							<td class="mailbox-subject"><a href="read-sent.php"><b>Lorem Ipsum</b> - There are many variations of Ipsum available...</a>
-							</td>
-							<td class="mailbox-attachment"></td>
-							<td class="mailbox-date">3 mins ago</td>
-						  </tr>
-						  <tr>
-							<td><input type="checkbox"></td>
-							<td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
-							<td class="mailbox-name">James</td>
-							<td class="mailbox-subject"><a href="read-sent.php"><b>Lorem Ipsum</b> - There are many variations of Ipsum available...</a>
-							</td>
-							<td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
-							<td class="mailbox-date">14 mins ago</td>
-						  </tr>
-						  <tr>
-							<td><input type="checkbox"></td>
-							<td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
-							<td class="mailbox-name">David</td>
-							<td class="mailbox-subject"><a href="read-sent.php"><b>Lorem Ipsum</b> - There are many variations of Ipsum available...</a>
-							</td>
-							<td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
-							<td class="mailbox-date">15 hours ago</td>
-						  </tr>
-						  <tr>
-							<td><input type="checkbox"></td>
-							<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-							<td class="mailbox-name">Benjamin</td>
-							<td class="mailbox-subject"><a href="read-sent.php"><b>Lorem Ipsum</b> - There are many variations of Ipsum available...</a>
-							</td>
-							<td class="mailbox-attachment"></td>
-							<td class="mailbox-date">25 hours ago</td>
-						  </tr>
-						 <tr>
-							<td><input type="checkbox"></td>
-							<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-							<td class="mailbox-name">Logan</td>
-							<td class="mailbox-subject"><a href="read-sent.php"><b>Lorem Ipsum</b> - There are many variations of Ipsum available...</a>
-							</td>
-							<td class="mailbox-attachment"></td>
-							<td class="mailbox-date">3 mins ago</td>
-						  </tr>
-						  <tr>
-							<td><input type="checkbox"></td>
-							<td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
-							<td class="mailbox-name">Christopher</td>
-							<td class="mailbox-subject"><a href="read-sent.php"><b>Lorem Ipsum</b> - There are many variations of Ipsum available...</a>
-							</td>
-							<td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
-							<td class="mailbox-date">14 mins ago</td>
-						  </tr>
-						  <tr>
-							<td><input type="checkbox"></td>
-							<td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
-							<td class="mailbox-name">Joseph</td>
-							<td class="mailbox-subject"><a href="read-sent.php"><b>Lorem Ipsum</b> - There are many variations of Ipsum available...</a>
-							</td>
-							<td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
-							<td class="mailbox-date">15 hours ago</td>
-						  </tr>
-						  <tr>
-							<td><input type="checkbox"></td>
-							<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-							<td class="mailbox-name">Jackson</td>
-							<td class="mailbox-subject"><a href="read-sent.php"><b>Lorem Ipsum</b> - There are many variations of Ipsum available...</a>
-							</td>
-							<td class="mailbox-attachment"></td>
-							<td class="mailbox-date">25 hours ago</td>
-						  </tr>
-						  <tr>
-							<td><input type="checkbox"></td>
-							<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-							<td class="mailbox-name">Gabriel</td>
-							<td class="mailbox-subject"><a href="read-sent.php"><b>Lorem Ipsum</b> - There are many variations of Ipsum available...</a>
-							</td>
-							<td class="mailbox-attachment"></td>
-							<td class="mailbox-date">3 mins ago</td>
-						  </tr>
-						  <tr>
-							<td><input type="checkbox"></td>
-							<td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
-							<td class="mailbox-name">Ryan</td>
-							<td class="mailbox-subject"><a href="read-sent.php"><b>Lorem Ipsum</b> - There are many variations of Ipsum available...</a>
-							</td>
-							<td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
-							<td class="mailbox-date">14 mins ago</td>
-						  </tr>
-						  <tr>
-							<td><input type="checkbox"></td>
-							<td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
-							<td class="mailbox-name">Samuel</td>
-							<td class="mailbox-subject"><a href="read-sent.php"><b>Lorem Ipsum</b> - There are many variations of Ipsum available...</a>
-							</td>
-							<td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
-							<td class="mailbox-date">15 hours ago</td>
-						  </tr>
-						  <tr>
-							<td><input type="checkbox"></td>
-							<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-							<td class="mailbox-name">John</td>
-							<td class="mailbox-subject"><a href="read-sent.php"><b>Lorem Ipsum</b> - There are many variations of Ipsum available...</a>
-							</td>
-							<td class="mailbox-attachment"></td>
-							<td class="mailbox-date">25 hours ago</td>
-						  </tr>
-						  <tr>
-							<td><input type="checkbox"></td>
-							<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-							<td class="mailbox-name">Christian</td>
-							<td class="mailbox-subject"><a href="read-sent.php"><b>Lorem Ipsum</b> - There are many variations of Ipsum available...</a>
-							</td>
-							<td class="mailbox-attachment"></td>
-							<td class="mailbox-date">3 mins ago</td>
-						  </tr>
-						  <tr>
-							<td><input type="checkbox"></td>
-							<td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
-							<td class="mailbox-name">Brayden</td>
-							<td class="mailbox-subject"><a href="read-sent.php"><b>Lorem Ipsum</b> - There are many variations of Ipsum available...</a>
-							</td>
-							<td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
-							<td class="mailbox-date">14 mins ago</td>
-						  </tr>
-						  <tr>
-							<td><input type="checkbox"></td>
-							<td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
-							<td class="mailbox-name">Evan</td>
-							<td class="mailbox-subject"><a href="read-sent.php"><b>Lorem Ipsum</b> - There are many variations of Ipsum available...</a>
-							</td>
-							<td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
-							<td class="mailbox-date">15 hours ago</td>
-						  </tr>
-						  <tr>
-							<td><input type="checkbox"></td>
-							<td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-							<td class="mailbox-name">Jordan</td>
-							<td class="mailbox-subject"><a href="read-sent.php"><b>Lorem Ipsum</b> - There are many variations of Ipsum available...</a>
-							</td>
-							<td class="mailbox-attachment"></td>
-							<td class="mailbox-date">25 hours ago</td>
-						  </tr>
+							  <?php if(count(getUsersentMessage($conn, $id))): ?>
+								<?php foreach(getUsersentMessage($conn, $id) as $message): ?>
+									<tr>
+										
+									
+										
+										<td class="mailbox-name">
+											<?= $message['senderId']; ?>
+										</td>
+										<td class="mailbox-name">
+											<?= $message['msgSubject']; ?>
+										</td>
+										<td class="mailbox-subject"><a href="read-inbox.php">
+											<?= $message['message']; ?>
+										</a>
+										</td>
+										<td class="mailbox-attachment"></td>
+										<td class="mailbox-date">
+										<?= date("D, m Y", strtotime($message['datee'])); ?>
+										</td>
+									</tr>
+								<?php endforeach; ?>
+								<?php else: ?>
+
+									<tr>
+										<td style="text-align: center; font-size: 1.5rem; color: #777;" colspan="5">No Messages Found</td>
+									</tr>
+
+								<?php endif; ?>  
 						  </tbody>
 						</table>
 					<!-- /.table -->

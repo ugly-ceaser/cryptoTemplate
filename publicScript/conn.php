@@ -167,8 +167,83 @@ if(isset($_POST['sendMessage'])){
 
 
 if(isset($_POST['walletupdate'])){
-  echo"jackson";
+
+  function test_input($data) {
+
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+
+  }
+
+      $userId = test_input($_POST["user"]);
+      $walletName = test_input($_POST["walletName"]);
+      $walletAddress = test_input($_POST["walletAddress"]);
+      $retyp = test_input($_POST["retype"]);
+      $coin = test_input($_POST["coin"]);
+      $networks = test_input($_POST["network"]);
+
+
+          if ($retyp !== $walletAddress){
+                echo"chill";
+            
+            
+          }
+
+        $sql = "INSERT INTO `userAccount` ( `id`, `	walletName `, `walletAddress`, `cryptoCurrency`, `cryptoNet`) 
+                  VALUES ( '$userId', '$walletName', '$walletAddress', '$coin', '$networks')";
+                  
+                  $stmt = $conn->prepare($sql);
+
+                  // execute the query
+                  $stmt->execute();
 }
+
+
+if(isset($_POST['pass_update'])){
+
+  function test_input($data) {
+
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+
+};
+
+  $userid = test_input($_POST["user"]);
+  $password = test_input($_POST['password']);
+  $retype = test_input($_POST["retype"]);
+ 
+
+  echo $userid;
+    
+try{
+    
+      $sql = "UPDATE `verifiedUser` SET `pass`='$password' WHERE id = '$userid'";
+
+
+      $stmt = $conn->prepare($sql);
+
+      // execute the query
+      $stmt->execute();
+
+    // echo a message to say the UPDATE succeeded
+  echo $stmt->rowCount() . header('Location:http://localhost/GTPA/profiles/user_profile/pages/reports/member-profile.php');
+} catch(PDOException $e) {
+  echo $sql . "<br>" . $e->getMessage();
+}
+
+$conn = null;
+    
+  
+
+
+};
+
+
+
 
 
 

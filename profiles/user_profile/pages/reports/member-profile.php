@@ -167,7 +167,7 @@
 					<div class="form-group row">
 					  <label class="col-sm-2 col-form-label">Re-type Wallet Addresss</label>
 					  <div class="col-sm-10">
-						<input class="form-control" name="retype_wallet" type="text" placeholder="Re-type Wallet Address" required>
+						<input class="form-control" name="retype" type="text" placeholder="Re-type Wallet Address" required>
 					  </div>
 					</div>
 					<div class="form-group row">
@@ -213,20 +213,20 @@
 						
 						<form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']) ?>">
 
-               <div class="form-group">
-												<input class="form-control" name="user" value="<?php echo $_id =  $id ? $id : "Not Verified"; ?>" hidden placeholder="To:">
+               							<div class="form-group">
+											<input class="form-control" name="user" value="<?php echo $_id =  $id ? $id : "Not Verified"; ?>" hidden placeholder="To:">
 											</div>
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Password</label>
 								<div class="col-sm-10">
-									<input class="form-control" type="password" placeholder="password">
+									<input class="form-control" name="password" type="password" placeholder="password">
 								</div>
 							</div>
 
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Re-Type Password</label>
 								<div class="col-sm-10">
-									<input class="form-control" type="retype_password" placeholder="Re-type Password">
+									<input class="form-control" name="retype" type="retype_password" placeholder="Re-type Password">
 								</div>
 							</div>
 

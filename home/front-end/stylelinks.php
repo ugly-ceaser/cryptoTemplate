@@ -6,7 +6,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../images/favicon.ico">
 
-    <title>Crypto Currency HTML Template</title>
+    <title>GTPA</title>
     
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="css/vendors_css.css">

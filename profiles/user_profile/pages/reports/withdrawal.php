@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../images/favicon.ico">
+    	<link rel="icon" href="../../../../home/front-end/logo-light-text2.png">
 
     <title>GTPA - Transactions Page </title>
   
@@ -46,12 +46,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Crypto Summary
+        Withdrawal
       </h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Reports</a></li>
-        <li class="breadcrumb-item active">Crypto Summary</li>
+        <li class="breadcrumb-item"><a href="#">User</a></li>
+        <li class="breadcrumb-item active">Withdrawal</li>
       </ol>
     </section>
 
@@ -226,7 +226,7 @@
 						  <a href="#"><i class="cc DASH mr-5" title="DASH"></i></a>
 						</div>
 						<div>
-						  <h1 class="no-margin text-bold">Contract Plan</h1>
+						  <h1 class="no-margin text-bold"><?php echo getUserdit($conn, $id)['package']; ?></h1>
 						</div>
 					  </div>
 					  <div class="flexbox align-items-center mt-5">

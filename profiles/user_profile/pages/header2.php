@@ -107,7 +107,7 @@ else{
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="deposit.php">Deposit</a></li>
+            <li><a href="Deposit.php">Deposit</a></li>
             <li><a href="withdrawal.php">Withrawal</a></li>
             
            
@@ -147,8 +147,7 @@ else{
           <li><a href="send_msg.php">Compose</a></li>	
           <li><a href="inbox.php">Inbox</a></li>	
           <li><a href="sent.php">Sent</a></li>	
-          <li><a href="starred.php">Starred</a></li>	
-          <li><a href="trash.php">Trash</a></li>			  
+       			  
           </ul>
         </li>
        

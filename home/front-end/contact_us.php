@@ -86,8 +86,8 @@
 						<p></p>
 						<div class="widget fs-18 my-20 py-20 by-1 border-light">	
 							<ul class="list list-unstyled text-white-80">
-								<li class="ps-40"><i class="ti-location-pin"></i>123, Lorem Ipsum, Dummy City,<br>FL-12345 USA</li>
-								<li class="ps-40 my-20"><i class="ti-mobile"></i>+(44) 755-734-1973</li>
+								<li class="ps-40"><i class="ti-location-pin"></i><br></li>
+								<li class="ps-40 my-20"><i class="ti-mobile"></i>+(44) 755-734-1973 (Whatsapp Only)</li>
 								<li class="ps-40"><i class="ti-email"></i>support@globaltradeprofessional.com</li>
 							</ul>
 						</div>

@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="icon" href="../images/favicon.ico">
+		<link rel="icon" href="../../home/front-end/logo-light-text2.png">
 	
 		<title>GTAP - Dashboard</title>
 		
@@ -101,7 +101,7 @@
             <a href="#"><i class=" NEO mr-5" title="NEO"></i></a>
           </div>
           <div>
-            <h3 class="no-margin">Contract Plan</h3>
+            <h3 class="no-margin"><?php echo getUserdit($conn, $id)['package']; ?></h3>
           </div>
           </div>
           <div class="flexbox align-items-center mt-25">
@@ -109,8 +109,8 @@
             <p class="no-margin"> <span class="text-gray"></span> <span class="text-info"></span></p>
           </div>
           <div class="text-right">
-            <p class="no-margin"><span class="text-success"></span> RIO</p>
-			<p class="no-margin"><span class="text-success">Bonus</span> $8100</p>
+            <p class="no-margin"><span class="text-success"></span> RIO </p>
+			<p class="no-margin"><span class="text-success">Bonus </span>$<?php echo( getUserDeposit($conn, $id)['amt']/100); ?></p>
 			
           </div>
           </div>

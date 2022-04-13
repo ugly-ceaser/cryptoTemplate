@@ -5,13 +5,14 @@
 
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "globvecz_martins";
+$password = "Marti08139110216";
 
 try {
-  $conn = new PDO("mysql:host=$servername;dbname=GlobalTrade", $username, $password);
+  $conn = new PDO("mysql:host=$servername;dbname=globvecz_GlobalTrade", $username, $password);
   // set the PDO error mode to exception
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo "connections Successful";
 
 } catch(PDOException $e) {
   // echo "Connection failed: " . $e->getMessage();
@@ -43,24 +44,39 @@ if(isset($_POST['user_profile'])){
       $lastname = test_input($_POST["lname"]);
       $email = test_input($_POST["email"]);
       $phoneNumber = test_input($_POST["phone"]);
+      $package = test_input($_POST["package"]);
+      $file = $_FILES["file"];
+      
+      
+        if(!$file["file"]["error"]){
+            $filename = $file["name"];
+            $des = "./uploads/";
+            $extension = pathinfo($filename, PATHINFO_EXTENSION);
+            $rand = time();
+            $filename .= $rand . "." . $extension;
+          
+            $main_file = $file["tmp_name"];
+          
+            $moved = move_uploaded_file($main_file, $des.$filename);
+            
+            try{
+    
+                $sql = "UPDATE `verifiedUser` SET `fname`='$firstname', `lname`='$lastname',`email`='$email',`phoneNumber`='$phoneNumber',`package`= '$package', `profile_pic`='$filename' WHERE id = '$userid'";
+    
+    
+                $stmt = $conn->query($sql);
+    
+                // execute the query
+                $stmt->execute();
+    
+                // echo a message to say the UPDATE succeeded
+                echo $stmt->rowCount() . header('Location:http://localhost/GTPA/profiles/user_profile/pages/reports/member-profile.php');
+            } catch(PDOException $e) {
+                echo $sql . "<br>" . $e->getMessage();
+            }
+        }
 
-      echo $userid;
         
-    try{
-
-          $sql = "UPDATE `verifiedUser` SET `fname`='$firstname',`lname`='$lastname',`email`='$email',`phoneNumber`='$phoneNumber' WHERE id = '$userid'";
-
-
-          $stmt = $conn->prepare($sql);
-
-          // execute the query
-          $stmt->execute();
-
-        // echo a message to say the UPDATE succeeded
-      echo $stmt->rowCount() . header('Location:http://localhost/GTPA/profiles/user_profile/pages/reports/member-profile.php');
-    } catch(PDOException $e) {
-      echo $sql . "<br>" . $e->getMessage();
-    }
 
     $conn = null;
         
@@ -96,7 +112,7 @@ if(isset($_POST['user_profile'])){
 
       $conn->exec($sql);
 
-      header("Location:http://localhost/GTPA/profiles/user_profile/pages/reports/Deposit.php? message = successful");
+      header("Location:https://globaltradeprofessionalalliance.com/profiles/user_profile/pages/reports/Deposit.php");
       
 } ;
 
@@ -128,7 +144,7 @@ if(isset($_POST['withdraw'])){
 
   $conn->exec($sql);
 
-  header("Location:http://localhost/GTPA/profiles/user_profile/pages/reports/withdrawal.php");
+  header("Location:https://globaltradeprofessionalalliance.com/profiles/user_profile/pages/reports/withdrawal.php");
 
 };
 
@@ -160,7 +176,7 @@ if(isset($_POST['sendMessage'])){
 
     $conn->exec($sql);
 
-    header("Location:http://localhost/GTPA/profiles/user_profile/pages/reports/sent.php");
+    header("Location:https://globaltradeprofessionalalliance.com/profiles/user_profile/pages/reports/sent.php");
 
           
 };
@@ -183,21 +199,28 @@ if(isset($_POST['walletupdate'])){
       $retyp = test_input($_POST["retype"]);
       $coin = test_input($_POST["coin"]);
       $networks = test_input($_POST["network"]);
-
+      
 
           if ($retyp !== $walletAddress){
-                echo"chill";
             
             
           }
 
-        $sql = "INSERT INTO `userAccount` ( `id`, `	walletName `, `walletAddress`, `cryptoCurrency`, `cryptoNet`) 
-                  VALUES ( '$userId', '$walletName', '$walletAddress', '$coin', '$networks')";
+        $sql = "INSERT INTO `userAccount` ( `id`, `walletName`, `walletAddress`, `cryptoCurrency`, `cryptoNet`) 
+                  VALUES (:userId, :walletName, :address, :crypto, :cryptoNet )";
                   
                   $stmt = $conn->prepare($sql);
 
                   // execute the query
-                  $stmt->execute();
+              $stmt->execute([
+                  "userId" => $userId,
+                  "walletName" => $walletName,
+                  "address" => $walletAddress,
+                  "crypto" => $coin,
+                  "cryptoNet" => $networks
+                ]);
+                
+                header("Location:https://globaltradeprofessionalalliance.com/profiles/user_profile/pages/reports/member-profile.php");
 }
 
 
@@ -230,7 +253,7 @@ try{
       $stmt->execute();
 
     // echo a message to say the UPDATE succeeded
-  echo $stmt->rowCount() . header('Location:http://localhost/GTPA/profiles/user_profile/pages/reports/member-profile.php');
+  echo $stmt->rowCount() . header("Location:https://globaltradeprofessionalalliance.com/profiles/user_profile/pages/reports/member-profile.php");
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
 }
@@ -319,7 +342,7 @@ function getUserDeposit($conn, $userId) {
             $trxType = "deposit";
             $trxStatus = "approved";
 
-            $query = "SELECT SUM(amount) AS amt FROM generalAccount WHERE id = :userId AND trxType = :trxType AND trxStatus = :trxStatus";
+            $query = "SELECT SUM(amount) AS amt FROM GeneralAccount WHERE id = :userId AND trxType = :trxType AND trxStatus = :trxStatus";
             $result = $conn->prepare($query);
             $result->execute([ "userId" => $userId, "trxType" => $trxType,"trxStatus" => $trxStatus]);
              

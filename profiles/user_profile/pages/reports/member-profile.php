@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../images/favicon.ico">
+    <link rel="icon" href="../../../../home/front-end/logo-light-text2.png">
 
     <title>GTPA - Members Profile</title>
   
@@ -60,11 +60,13 @@
           <!-- Profile Image -->
           <div class="box bg-yellow bg-deathstar-dark">
             <div class="box-body box-profile">
-              <img class="profile-user-img rounded img-fluid mx-auto d-block" src="../../../images/5.jpg" alt="User profile picture">
+              <img class="profile-user-img rounded img-fluid mx-auto d-block" src="../../../../publicScript/uploads/<?php echo getUserdit($conn, $id)['profile_pic']; ?>" alt="User profile picture">
 
               <h2 class="profile-username text-center mb-0"><?php echo getUserdit($conn, $id)['fname']; ?></h2>
 
               <h4 class="text-center mt-0"><i class="fa fa-envelope-o mr-10"></i><?php echo getUserdit($conn, $id)['email']; ?></h4>
+              
+              <h4 class="text-center mt-0"><i class="fa fa-user-o mr-10"></i><?php echo getUserdit($conn, $id)['package']; ?></h4>
 				
              
             
@@ -85,7 +87,7 @@
 			  <div class="row">
 				<div class="col-12">
 
-        <form action="../../../../publicScript/conn.php" method="post">
+        <form action="../../../../publicScript/conn.php" method="post" enctype="multipart/form-data">
               <div class="form-group">
 				<input class="form-control" name="user" value="<?php echo $_id =  $id ? $id : "Not Verified"; ?>" hidden placeholder="To:">
 					</div>
@@ -113,13 +115,39 @@
 						<input class="form-control" type="tel" name="phone"  placeholder="Enter your phone number" required>
 					  </div>
 					</div>
+					
+					
+							
+							
+					<div class="form-group row">
+					  
+					        <label class="col-sm-2 col-form-label">Package</label>
+					  
+					        <div class="col-sm-10">
+						
+						            <select name="package" id="select" class="form-control ps-15 bg-transparent" required>
+													  <option value="">Select Package</option>	
+													  <option value="Starter Plan">Starter Plan </option>
+													  <option value="High Frequency Plan">High Frequency Plan</option>
+													  <option value="Contract Plan">Contract Plan</option>
+													   <option value="Leverage Plan">Leverage Plan</option>
+													  <option value="Retirement plan">Retirement Plan</option>
+					         </div>
+					  
+					  </div>
 
-					<!-- <div class="form-group row">
+					
+					
+					
+					
+					
+
+					<div class="form-group row">
 								<label class="col-sm-2 col-form-label">Profile Picture</label>
 								<div class="col-sm-10">
-									<input class="form-control" name="file "type="file" placeholder="Profile Picture">
+									<input class="form-control" name="file" type="file" placeholder="Profile Picture">
 								</div>
-							</div> -->
+							</div> 
 
 
 					<div class="form-group row">

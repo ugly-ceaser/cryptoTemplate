@@ -81,15 +81,15 @@ else{
 					<a href="#">Other Services</a>
 					<ul class="dropdown-menu">
 						<li>
-							<a href="#">Real Estate Investment</a>
+							<a href="./contact_us.php">Real Estate Investment</a>
 							
 						</li>
 						<li>
-							<a href="#">Oil Services Investment</a>
+							<a href="./contact_us.php">Oil Services Investment</a>
 							
 						</li>
 						<li>
-							<a href="#">Asset Management Services</a>
+							<a href="./contact_us.php">Asset Management Services</a>
 							
 						</li>
 					</ul>

@@ -2,17 +2,17 @@ const options = [
     {
         name: "USDT",
         image: "../../../images/usdt.png",
-        text: " USDT Address"
+        text: "0xB9C10Aee013543b5293bCc56bA3F9ca97e487F9A"
     },
     {
         name: "ETH",
         image: "../../../images/eth.png",
-        text: " ETH address"
+        text: " 0xB9C10Aee013543b5293bCc56bA3F9ca97e487F9A"
     },
     {
         name: "BTC",
         image: "../../../images/btc.png",
-        text: " BTC address"
+        text: " bc1qdcntwzqu8lxdcevu3ztjye3zvvfxq7unsdpu37"
     },
 ];
 

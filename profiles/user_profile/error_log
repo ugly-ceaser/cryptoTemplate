@@ -1,0 +1,18 @@
+[12-Apr-2022 09:33:07 America/New_York] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'globvecz_GlobalTrade.generalAccount' doesn't exist in /home/globvecz/public_html/publicScript/conn.php:325
+Stack trace:
+#0 /home/globvecz/public_html/publicScript/conn.php(325): PDOStatement->execute(Array)
+#1 /home/globvecz/public_html/profiles/user_profile/index.php(143): getUserDeposit(Object(PDO), '470129503')
+#2 {main}
+  thrown in /home/globvecz/public_html/publicScript/conn.php on line 325
+[12-Apr-2022 09:34:31 America/New_York] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'globvecz_GlobalTrade.generalAccount' doesn't exist in /home/globvecz/public_html/publicScript/conn.php:325
+Stack trace:
+#0 /home/globvecz/public_html/publicScript/conn.php(325): PDOStatement->execute(Array)
+#1 /home/globvecz/public_html/profiles/user_profile/index.php(143): getUserDeposit(Object(PDO), '470129503')
+#2 {main}
+  thrown in /home/globvecz/public_html/publicScript/conn.php on line 325
+[12-Apr-2022 13:22:24 America/New_York] PHP Notice:  Undefined variable: id in /home/globvecz/public_html/profiles/user_profile/index.php on line 77
+[12-Apr-2022 13:22:24 America/New_York] PHP Notice:  Undefined variable: id in /home/globvecz/public_html/profiles/user_profile/index.php on line 143
+[12-Apr-2022 13:22:24 America/New_York] PHP Notice:  Undefined variable: id in /home/globvecz/public_html/profiles/user_profile/index.php on line 188
+[12-Apr-2022 15:26:50 America/New_York] PHP Notice:  Undefined variable: id in /home/globvecz/public_html/profiles/user_profile/index.php on line 77
+[12-Apr-2022 15:26:50 America/New_York] PHP Notice:  Undefined variable: id in /home/globvecz/public_html/profiles/user_profile/index.php on line 143
+[12-Apr-2022 15:26:50 America/New_York] PHP Notice:  Undefined variable: id in /home/globvecz/public_html/profiles/user_profile/index.php on line 188

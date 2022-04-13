@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../images/favicon.ico">
+    <link rel="icon" href="../../../../home/front-end/logo-light-text2.png">
 
     <title>GTPA - Transactions Page </title>
   
@@ -121,7 +121,7 @@
 							  </div>
 
 							  <div class="col-sm-12 col-md-7">
-									<img id="img" src="../../../images/usdt.png" class="img-responsive" alt="SELECT COIN">
+									<img id="img" src="../../../images/" class="img-responsive" alt="SELECT COIN">
 									<h2 id="textBox" ></h2>
 							  </div>
 						  </div>

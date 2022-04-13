@@ -76,7 +76,7 @@ if(!isset($_SESSION['ADMIN'])) header("Location: ./index.php");
           <p>User Profile</p>
 			<a href="#" class="link" data-toggle="tooltip" title="" data-original-title="Settings"><i class="ion ion-gear-b"></i></a>
            
-            <a href="../../publicScript/logout.php" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="ion ion-power"></i></a>
+            <a href="https://globaltradeprofessionalalliance.com/publicScript/logout.php" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="ion ion-power"></i></a>
         </div>
       </div>
       <!-- sidebar menu -->

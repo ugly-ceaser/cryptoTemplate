@@ -4,7 +4,7 @@
 <body class="theme-warning bg-light-body">
 <?php include 'header.php';?>
 
-<?php include '../../publicScript/alert.php';?>
+
 
 	
 	<!---page Title --->
@@ -32,7 +32,7 @@
 					<div class="box box-body">
 						<div class="content-top-agile pb-0 pt-20">
 								
-						      <p><span><h3 style="color:red"><?php echo "$message" ?></h1></span></p>
+						      <p><span><h3 style="color:red"></h1></span></p>
 							<h2 class="text-primary">Get started with Us</h2>
 							<p class="mb-0">Register a New Membership</p>							
 						</div>
@@ -62,13 +62,22 @@
 								</div>
 								<div class="form-group">
 									<div class="input-group mb-15">
-										<span class="input-group-text bg-transparent"><i class="ti-lock"></i></span>
+										<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
 										<input type="text" name="username" class="form-control ps-15 bg-transparent" placeholder="Username">
 									</div>
+									
+									
+								<div class="form-group">
+									<div class="input-group mb-15">
+										<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
+										<input type="text" name="password" class="form-control ps-15 bg-transparent" placeholder="password">
+									</div>
+									
+									
 								</div> 
 							    <div class="form-group">
 									<div class="input-group mb-15">
-										<span class="input-group-text bg-transparent"><i class="ti-lock"></i></span>
+										<span class="input-group-text bg-transparent"><i class="ti-telephone"></i></span>
 										<input type="tel" name = "phoneNumber"class="form-control ps-15 bg-transparent" placeholder="Phone Number">
 										
 									</div>
@@ -88,7 +97,7 @@
 								  </div>
 							</form>				
 							<div class="text-center">
-								<p class="mt-15 mb-0">Already have an account?<a href="login.html" class="text-danger ms-5"> Log In</a></p>
+								<p class="mt-15 mb-0">Already have an account?<a href="login.php" class="text-danger ms-5"> Log In</a></p>
 							</div>
 						</div>
 					</div>								

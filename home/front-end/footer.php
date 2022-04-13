@@ -20,8 +20,8 @@
 							<h4 class="footer-title text-white">Contact Info</h4>
 							<hr class="bg-primary mb-10 mt-0 d-inline-block mx-auto w-60">
 							<ul class="list list-unstyled mb-30">
-								<li> <i class="fa fa-map-marker"></i> 123, Lorem Ipsum, Dummy City,<br>FL-12345 USA</li>
-								<li> <i class="fa fa-phone"></i> <span>+(44) 755-734-1973 </span><br><span>+(1) 123-878-1649 </span></li>
+								<li> <i class="fa fa-map-marker"></i> <br></li>
+								<li> <i class="fa fa-phone"></i> <span>+(44) 755-734-1973 (Whatsapp Only) </span></li>
 								<li> <i class="fa fa-envelope"></i> <span>hello@globaltradeprofessional.com </span><br><span>support@globaltradeprofessional.com</span></li> </span></li>
 							</ul>
 						</div>

@@ -2,8 +2,7 @@
   Session_start();
 require "./conn.php";
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+
 
 
 
@@ -19,12 +18,13 @@ $lname = test_input($_POST["lname"]);
 $email = test_input($_POST["email"]);
 $username = test_input($_POST["username"]);
 $phoneNumber = test_input($_POST["phoneNumber"]);
+$password = test_input($_POST["password"]);
 $file = "";
 
 $number = "0123456789asdfgASDFG";
 $number2 = "01234567890";
 
-$password = substr(str_shuffle($number),0,4);
+//$password = substr(str_shuffle($number),0,4);
 
 $id = substr(str_shuffle($number2),0,9);
 
@@ -32,8 +32,7 @@ $date =  date("Y/m/d");
 
 $lastlog = date("Y/m/d");
 
-$body = "welcom";
-$subjet = "chill";
+
 
 
 
@@ -125,9 +124,9 @@ $sql = "INSERT INTO `verifiedUser`(`id`, `fname`, `lname`, `email`, `username`, 
 
 
 
-  $to = 'maryjane@email.com';
-$subject = 'Marriage Proposal';
-$from = 'peterparker@email.com';
+  $to = $email;
+$subject = 'Congrats';
+$from = 'Global Trade Proffessional Alliance';
  
 // To send HTML mail, the Content-type header must be set
 $headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -140,8 +139,8 @@ $headers .= 'From: '.$from."\r\n".
  
 // Compose a simple HTML email message
 $message = '<html><body>';
-$message .= '<h1 style="color:#f40;">Hi Jane!</h1>';
-$message .= '<p style="color:#080;font-size:18px;">Will you marry me?</p>';
+$message .= '<h1 style="color:#f40;">Congrats ! please Login with your username and </h1>';
+$message .= '<p style="color:#080;font-size:18px;"><?= $password; ?> to complete your registration</p>';
 $message .= '</body></html>';
  
 // Sending email
@@ -152,50 +151,11 @@ if(mail($to, $subject, $message, $headers)){
 }
 
 
-  require_once "PHPMailer/PHPMailer.php" ;
-  require_once "PHPMailer/SMTP.php" ;
-  require_once "PHPMailer/Exception.php" ;
-
-  $mail = new PHPMailer();
-
-
-  function sendMail($mail, $email, $fullname, $subject, $body){
-
-    $mail -> isSMTP();
-        $mail -> Host = "globaltradeprofesionalalliance.com";
-        $mail -> SMTPAuth = true;
-        $mail-> Username = "support@globaltradeprofesionalalliance.com";
-        $mail -> password = 'Marti08139110216';
-        $mail -> port = 465;
-        $mail -> SMTPSecure = "ssl";
-
-
-        //email settings
-
-        $mail -> isHTML(true);
-        $mail -> setfrom($email,$fullname);
-        $mail -> addAddress("support@globaltradeprofesionalalliance.com");
-        $mail -> subject = ("$email,($subject)");
-        $mail -> Body = $body;
-        $mail -> AltBody = "Please Enable HTML mail";
+  
 
 
 
-
-        if($mail->send()){
-          $status = "success";
-          $response = "message sent";
-        }
-        else{
-          $status = "failed";
-          $response = "something went Wrong :  <br>" .$mail -> ErrorInfo;
-        }
-
-            
-
-
-
-  }
+ 
  
   
   
@@ -223,6 +183,7 @@ if(mail($to, $subject, $message, $headers)){
   
 
 } catch(PDOException $e) {
+    echo "somthing wrong with registration";
   echo $sql . "<br>" . $e->getMessage();
 }
 }

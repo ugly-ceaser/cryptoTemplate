@@ -121,8 +121,10 @@
 							  </div>
 
 							  <div class="col-sm-12 col-md-7">
-									<img id="img" src="../../../images/" class="img-responsive" alt="SELECT COIN">
-									<h2 id="textBox" ></h2>
+									<img id="img" src="../../../images/coin.png" class="img-responsive" alt="SELECT COIN" style="min-height:300px;">
+									<br>
+									<br>
+									<p id="textBox" ></p>
 							  </div>
 						  </div>
 					  </div>

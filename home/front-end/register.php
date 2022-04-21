@@ -57,20 +57,20 @@
 								<div class="form-group">
 									<div class="input-group mb-15">
 										<span class="input-group-text bg-transparent"><i class="ti-email"></i></span>
-										<input type="email" name = "email"class="form-control ps-15 bg-transparent" placeholder="Email">
+										<input type="email" name = "email"class="form-control ps-15 bg-transparent" placeholder="Email" Required>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="input-group mb-15">
 										<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
-										<input type="text" name="username" class="form-control ps-15 bg-transparent" placeholder="Username">
+										<input type="text" name="username" class="form-control ps-15 bg-transparent" placeholder="Username" Required>
 									</div>
 									
 									
 								<div class="form-group">
 									<div class="input-group mb-15">
 										<span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
-										<input type="text" name="password" class="form-control ps-15 bg-transparent" placeholder="password">
+										<input type="text" name="password" class="form-control ps-15 bg-transparent" placeholder="password" Required>
 									</div>
 									
 									
@@ -78,7 +78,7 @@
 							    <div class="form-group">
 									<div class="input-group mb-15">
 										<span class="input-group-text bg-transparent"><i class="ti-telephone"></i></span>
-										<input type="tel" name = "phoneNumber"class="form-control ps-15 bg-transparent" placeholder="Phone Number">
+										<input type="tel" name = "phoneNumber"class="form-control ps-15 bg-transparent" placeholder="Phone Number" Required>
 										
 									</div>
 								</div>

@@ -83,3 +83,6 @@ Stack trace:
 [12-Apr-2022 11:58:37 America/New_York] PHP Notice:  Undefined index: file in /home/globvecz/public_html/publicScript/conn.php on line 51
 [12-Apr-2022 12:00:15 America/New_York] PHP Notice:  Undefined index: file in /home/globvecz/public_html/publicScript/conn.php on line 51
 [12-Apr-2022 12:03:29 America/New_York] PHP Notice:  Undefined index: file in /home/globvecz/public_html/publicScript/conn.php on line 51
+[14-Apr-2022 07:46:42 America/New_York] PHP Notice:  Undefined index: file in /home/globvecz/public_html/publicScript/conn.php on line 51
+[14-Apr-2022 08:55:09 America/New_York] PHP Notice:  Undefined index: file in /home/globvecz/public_html/publicScript/conn.php on line 51
+[14-Apr-2022 08:56:09 America/New_York] PHP Notice:  Undefined index: file in /home/globvecz/public_html/publicScript/conn.php on line 51

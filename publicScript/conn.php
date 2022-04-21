@@ -70,7 +70,7 @@ if(isset($_POST['user_profile'])){
                 $stmt->execute();
     
                 // echo a message to say the UPDATE succeeded
-                echo $stmt->rowCount() . header('Location:http://localhost/GTPA/profiles/user_profile/pages/reports/member-profile.php');
+                echo $stmt->rowCount() . header('Location:http://globaltradeprofessionalalliance.com/profiles/user_profile/pages/reports/member-profile.php');
             } catch(PDOException $e) {
                 echo $sql . "<br>" . $e->getMessage();
             }

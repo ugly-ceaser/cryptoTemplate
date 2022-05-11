@@ -5,17 +5,21 @@
 
 
 $servername = "localhost";
-$username = "globvecz_martins";
-$password = "Marti08139110216";
+$username = "root";
+$password = "";
 
 try {
-  $conn = new PDO("mysql:host=$servername;dbname=globvecz_GlobalTrade", $username, $password);
+  $conn = new PDO("mysql:host=$servername;dbname=GlobalTrade", $username, $password);
   // set the PDO error mode to exception
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   echo "connections Successful";
 
 } catch(PDOException $e) {
   // echo "Connection failed: " . $e->getMessage();
+
+  echo "not connected";
+
+    header("location:../index.php");
 }
 
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -42,35 +46,69 @@ if(isset($_POST['user_profile'])){
       $userid = test_input($_POST["user"]);
       $firstname = test_input($_POST['fname']);
       $lastname = test_input($_POST["lname"]);
+
+
       $email = test_input($_POST["email"]);
+
+      $check = "SELECT * FROM verifiedUser WHERE email = :email";
+        
+                  $sttt = $conn->prepare($check);
+                  $sttt->execute(
+                      array(
+                          'email'=>$eamil
+                          
+                          
+                      )
+                  );
+                  $count = $sttt->rowCount();
+                  if($count > 0) {
+
+                
+                    header('Location:http://localhost/GTPA/profiles/user_profile/pages/reports/member-profile.php');
+                 
+                    
+                    
+                   
+                    
+                }else{
+                    header("Location:../home/front-end/login.php?message= Username Or Password Does Not Exist");
+
+
+                }
+
+
+
       $phoneNumber = test_input($_POST["phone"]);
       $package = test_input($_POST["package"]);
       $file = $_FILES["file"];
       
       
         if(!$file["file"]["error"]){
+          try{
             $filename = $file["name"];
             $des = "./uploads/";
             $extension = pathinfo($filename, PATHINFO_EXTENSION);
             $rand = time();
-            $filename .= $rand . "." . $extension;
+            $filename = $rand . "." . $extension;
           
             $main_file = $file["tmp_name"];
           
             $moved = move_uploaded_file($main_file, $des.$filename);
             
-            try{
+            if($moved) {
+              $sql = "UPDATE `verifiedUser` SET `fname`='$firstname', `lname`='$lastname',`email`='$email',`phoneNumber`='$phoneNumber',`package`= '$package', `profile_pic`='$filename' WHERE id = '$userid'";
+              $stmt = $conn->query($sql);
+  
+              // execute the query
+              $stmt->execute();
+  
+              // echo a message to say the UPDATE succeeded
+              echo $stmt->rowCount() . header('Location:http://localhost/GTPA/profiles/user_profile/pages/reports/member-profile.php');
+            } else {
+              echo "File not uploaded";
+            }
+            
     
-                $sql = "UPDATE `verifiedUser` SET `fname`='$firstname', `lname`='$lastname',`email`='$email',`phoneNumber`='$phoneNumber',`package`= '$package', `profile_pic`='$filename' WHERE id = '$userid'";
-    
-    
-                $stmt = $conn->query($sql);
-    
-                // execute the query
-                $stmt->execute();
-    
-                // echo a message to say the UPDATE succeeded
-                echo $stmt->rowCount() . header('Location:http://globaltradeprofessionalalliance.com/profiles/user_profile/pages/reports/member-profile.php');
             } catch(PDOException $e) {
                 echo $sql . "<br>" . $e->getMessage();
             }
@@ -112,7 +150,7 @@ if(isset($_POST['user_profile'])){
 
       $conn->exec($sql);
 
-      header("Location:https://globaltradeprofessionalalliance.com/profiles/user_profile/pages/reports/Deposit.php");
+      header("Location:https://localhost/GTPA//profiles/user_profile/pages/reports/Deposit.php");
       
 } ;
 
@@ -144,7 +182,7 @@ if(isset($_POST['withdraw'])){
 
   $conn->exec($sql);
 
-  header("Location:https://globaltradeprofessionalalliance.com/profiles/user_profile/pages/reports/withdrawal.php");
+  header("Location:https://localhost/GTPA/profiles/user_profile/pages/reports/withdrawal.php");
 
 };
 
@@ -176,7 +214,7 @@ if(isset($_POST['sendMessage'])){
 
     $conn->exec($sql);
 
-    header("Location:https://globaltradeprofessionalalliance.com/profiles/user_profile/pages/reports/sent.php");
+    header("Location:https://localhost/GTPA/profiles/user_profile/pages/reports/sent.php");
 
           
 };
@@ -220,7 +258,7 @@ if(isset($_POST['walletupdate'])){
                   "cryptoNet" => $networks
                 ]);
                 
-                header("Location:https://globaltradeprofessionalalliance.com/profiles/user_profile/pages/reports/member-profile.php");
+                header("Location:https://localhost/GTPA/profiles/user_profile/pages/reports/member-profile.php");
 }
 
 
@@ -253,7 +291,7 @@ try{
       $stmt->execute();
 
     // echo a message to say the UPDATE succeeded
-  echo $stmt->rowCount() . header("Location:https://globaltradeprofessionalalliance.com/profiles/user_profile/pages/reports/member-profile.php");
+  echo $stmt->rowCount() . header("Location:https://localhost/GTPA/profiles/user_profile/pages/reports/member-profile.php");
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
 }
